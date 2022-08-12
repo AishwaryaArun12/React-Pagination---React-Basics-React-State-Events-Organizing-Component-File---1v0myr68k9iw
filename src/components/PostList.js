@@ -26,7 +26,7 @@ const PostList = () => {
         {!isLoading&&post.map((item,i)=>{
            return <Post title={item.title} body={item.body} id={i} key={i}></Post>
         })}
-        {!isLoading&&<PaginationButtonsList handleChange={handleChange}></PaginationButtonsList>}
+        {!isLoading&&<PaginationButtonsList handleChange={handleChange} page={page}></PaginationButtonsList>}
         </>
     )
 }
