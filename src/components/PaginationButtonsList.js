@@ -4,7 +4,7 @@ const noOfPages=20;
 function createButtons(){
     const buttonsArr=[];
     for(let i=0;i<noOfPages;i++){
-        buttonsArr.push(<button id={'button-'(i+1)} value={i+1} onClick={buttonClick}>{i+1}</button>);
+        buttonsArr.push(<button id={'button-'+(i+1)} value={i+1} key={i+1} onClick={buttonClick}>{i+1}</button>);
     }
     return buttonsArr;
     }

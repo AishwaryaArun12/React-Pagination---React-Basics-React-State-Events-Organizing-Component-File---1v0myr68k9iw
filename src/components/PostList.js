@@ -24,7 +24,7 @@ const PostList = () => {
         <>
         {isLoading&&<h1>Loading...</h1>}
         {!isLoading&&post.map((item,i)=>{
-           return <Post title={item.title} body={item.body} id={i}></Post>
+           return <Post title={item.title} body={item.body} id={i} key={i}></Post>
         })}
         <PaginationButtonsList handleChange={handleChange}></PaginationButtonsList>
         </>
