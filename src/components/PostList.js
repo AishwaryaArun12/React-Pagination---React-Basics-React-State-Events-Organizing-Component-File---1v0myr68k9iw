@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react';
 import {fetchPosts} from '../api/fetchPosts';
 import {Post} from './Post';
 import { PaginationButtonsList } from './PaginationButtonsList';
-
+import { Loader } from './Loader';
 
 const PostList = () => {
     const [page, setPage]=useState(1);
@@ -22,7 +22,7 @@ const PostList = () => {
     }
     return (
         <>
-        {isLoading&&<h1>Loading...</h1>}
+        {isLoading&&<Loader id="loader"></Loader>}
         {!isLoading&&post.map((item,i)=>{
            return <Post title={item.title} body={item.body} id={i} key={i}></Post>
         })}
