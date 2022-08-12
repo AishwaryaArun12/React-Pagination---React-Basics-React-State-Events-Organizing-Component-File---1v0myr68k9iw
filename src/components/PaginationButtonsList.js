@@ -3,9 +3,11 @@ const PaginationButtonsList = (props) => {
 const noOfPages=20;
 function createButtons(){
     const buttonsArr=[];
-    for(let i=0;i<noOfPages;i++){
+    buttonsArr[0]=<button id='button-1' value='1' key='1' onClick={buttonClick} className='active-btn'>1</button>
+    for(let i=1;i<noOfPages;i++){
         buttonsArr.push(<button id={'button-'+(i+1)} value={i+1} key={i+1} onClick={buttonClick}>{i+1}</button>);
     }
+   
     return buttonsArr;
     }
     function buttonClick(e) {
