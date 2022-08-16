@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Loader = () => {
+export const Loader = (props) => {
   return (
-    <h1>Loading...</h1>
+    <h1 id={props.id}>Loading...</h1>
   )
 }
