@@ -6,6 +6,7 @@ import { PaginationButtonsList } from './PaginationButtonsList';
 import { Loader } from './Loader';
 
 const PostList = () => {
+    const [redButton, setRedButton]= useState(1);
     const [page, setPage]=useState(1);
     const [post,setPost]=useState([]);
     const [isLoading, setIsLoading]=useState(true);
@@ -18,6 +19,7 @@ const PostList = () => {
         })
     },[page]);
     function handleChange(e){
+        setRedButton(e.target.value);
         setPage(e.target.value);
     }
     return (
@@ -26,7 +28,7 @@ const PostList = () => {
         {!isLoading&&post.map((item,i)=>{
            return <Post title={item.title} body={item.body} id={i} key={i}></Post>
         })}
-        {!isLoading&&<PaginationButtonsList handleChange={handleChange} page={page}></PaginationButtonsList>}
+        {!isLoading&&<PaginationButtonsList redButton={redButton} handleChange={handleChange} page={page}></PaginationButtonsList>}
         </>
     )
 }
