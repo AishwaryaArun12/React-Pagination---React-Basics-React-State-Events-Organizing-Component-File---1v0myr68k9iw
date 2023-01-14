@@ -24,9 +24,9 @@ const PostList = () => {
     }
     return (
         <>
-        {isLoading&&<Loader id="loader"></Loader>}
+        {isLoading&&<Loader id={loader}></Loader>}
         {!isLoading&&post.map((item,i)=>{
-           return <Post title={item.title} body={item.body} id={i} key={i}></Post>
+           return <Post className={post} title={item.title} body={item.body} id={i} key={i}></Post>
         })}
         {!isLoading&&<PaginationButtonsList redButton={redButton} handleChange={handleChange} page={page}></PaginationButtonsList>}
         </>
