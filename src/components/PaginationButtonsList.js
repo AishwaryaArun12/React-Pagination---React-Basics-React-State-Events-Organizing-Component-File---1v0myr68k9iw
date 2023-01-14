@@ -8,7 +8,7 @@ const arr=[1,2,3,4]
   {buttonArr.map((button,id)=>{
     
     return (
-    <button key={id} className={button==props.redButton?'active-btn':'btn'} onClick={props.handleChange} value={button}>{button}</button>)
+    <button key={id} id="button-${button}" className={button==props.redButton?'active-btn':'btn'} onClick={props.handleChange} value={button}>{button}</button>)
   })}
   </div>;
   };0
